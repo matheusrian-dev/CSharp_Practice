@@ -1,4 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Say somenthing:");
-string message = Console.ReadLine();
-Console.WriteLine($"Echo: {message}");
+//var numberOne = 23f;
+//var numbertwo = 23.45;
+//Console.WriteLine(numberOne);
+//Console.WriteLine("Say somenthing:");
+//var message = Console.ReadLine();
+//Console.WriteLine(SimpleMath.Add(numberOne, numbertwo));
+using CSharp_Practice.Classes;
+double numberOne = 13f;
+BankAccount bankAccount = new BankAccount(); // Instanciação de classes não estáticas
+bankAccount.AddToBalance(numberOne);
+
+class SimpleMath
+{
+    public static double Add(double n1, double n2) // Métodos e classes que não são estáticos (contém o static), precisam ser instanciados antes de serem utilizados
+    {
+        return n1 + n2;
+    }
+}
