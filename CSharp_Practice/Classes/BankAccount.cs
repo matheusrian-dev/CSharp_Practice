@@ -18,18 +18,32 @@ namespace CSharp_Practice.Classes
                     return balance;
                 return 1000000;
             }
-            set
+            protected set
             {
                 if (value > 0)
                     balance = value;
-                balance = 0;
+                else
+                    balance = 0;
             }
+        }
+
+        public BankAccount() //ctor
+        {
+            Balance = 100;
         }
 
         public double AddToBalance(double balanceToBeAdded)
         {
             Balance += balanceToBeAdded;
             return Balance;
+        }
+    }
+
+    public class ChildBankAccount : BankAccount
+    {
+        public ChildBankAccount()
+        {
+            Balance = 40;
         }
     }
 }

@@ -9,6 +9,12 @@ using CSharp_Practice.Classes;
 double numberOne = 13f;
 BankAccount bankAccount = new BankAccount(); // Instanciação de classes não estáticas
 bankAccount.AddToBalance(numberOne);
+Console.WriteLine(bankAccount.Balance);
+
+ChildBankAccount childBankAccount = new ChildBankAccount();
+childBankAccount.AddToBalance(10);
+
+Console.WriteLine(childBankAccount.Balance);
 
 class SimpleMath
 {
