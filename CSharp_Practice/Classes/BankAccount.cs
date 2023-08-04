@@ -32,7 +32,12 @@ namespace CSharp_Practice.Classes
             Balance = 100;
         }
 
-        public double AddToBalance(double balanceToBeAdded)
+        public BankAccount(double initialbalance)
+        {
+            Balance = initialbalance;
+        }
+
+        public virtual double AddToBalance(double balanceToBeAdded)
         {
             Balance += balanceToBeAdded;
             return Balance;
@@ -44,6 +49,15 @@ namespace CSharp_Practice.Classes
         public ChildBankAccount()
         {
             Balance = 40;
+        }
+
+        public override double AddToBalance(double balanceToBeAdded) // Exemplo de override (sobreposição)
+        {
+            if (balanceToBeAdded > 1000)
+                balanceToBeAdded = 1000;
+            if (balanceToBeAdded < -1000)
+                balanceToBeAdded = -1000;
+            return base.AddToBalance(balanceToBeAdded);
         }
     }
 }
