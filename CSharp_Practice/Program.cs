@@ -6,6 +6,7 @@
 //var message = Console.ReadLine();
 //Console.WriteLine(SimpleMath.Add(numberOne, numbertwo));
 using CSharp_Practice.Classes;
+using CSharp_Practice.Interfaces;
 
 
 // Utilizando o Overload do método Add da classe SimpleMath
@@ -23,20 +24,26 @@ childBankAccount.AddToBalance(10);
 
 Console.WriteLine(childBankAccount.Balance);
 
-class SimpleMath
+class SimpleMath : IInformation
 {
-    public static double Add(double n1, double n2) // Métodos e classes que não são estáticos (contém o static), precisam ser instanciados antes de serem utilizados
+    public static double Add(double n1, double n2) // Métodoss e classes que não são estáticos (contém o static), precisam ser instanciados antes de serem utilizados
     {
-        return n1 + n2;
+        return n1 + n2 ;
     }
 
     public static double Add(double[] numbers)
     {
         double result = 0;
+        
         foreach(double d in numbers)
         {
             result += d;
         }
         return result;
+    }
+
+    public string GetInformation()
+    {
+        return "Classe que faz operações matemáticas simples.";
     }
 }

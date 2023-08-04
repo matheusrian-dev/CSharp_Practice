@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharp_Practice.Interfaces;
 
 namespace CSharp_Practice.Classes
 {
-    public class BankAccount
+    public class BankAccount : IInformation
     {
         private double balance;
 
@@ -41,6 +42,11 @@ namespace CSharp_Practice.Classes
         {
             Balance += balanceToBeAdded;
             return Balance;
+        }
+
+        public string GetInformation()
+        {
+            return $"Seu saldo atual é: {Balance:c}";
         }
     }
 
