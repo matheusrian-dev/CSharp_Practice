@@ -7,6 +7,7 @@
 //Console.WriteLine(SimpleMath.Add(numberOne, numbertwo));
 using CSharp_Practice.Classes;
 using CSharp_Practice.Interfaces;
+using Microsoft.VisualBasic;
 
 
 // Utilizando o Overload do método Add da classe SimpleMath
@@ -18,6 +19,16 @@ double numberOne = 13f;
 BankAccount bankAccount = new BankAccount(1000); // Instanciação de classes não estáticas
 bankAccount.AddToBalance(numberOne);
 Console.WriteLine(bankAccount.Balance);
+
+SimpleMath simpleMath = new SimpleMath();
+
+Console.WriteLine(Information(simpleMath)); // Mostrando a forma que uma interface é utilizada para passar diferentes informações
+Console.WriteLine(Information(bankAccount));
+
+static string Information(IInformation information)
+{
+    return information.GetInformation();
+}
 
 ChildBankAccount childBankAccount = new ChildBankAccount();
 childBankAccount.AddToBalance(10);
